@@ -7,5 +7,5 @@ public class Spearman extends Infantry {
         super(name, hp, armor, speed, stamina);
     }
 
-
+ void swipe(){};
 }
