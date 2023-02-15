@@ -1,0 +1,37 @@
+import Unit.*;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Instrument {
+    public static String newName(){
+        return String.valueOf(Names.values()[new Random().nextInt(Names.values().length-1)]);
+    }
+    /**
+     * Наполняет команду темными бойцами
+     */
+    static void fillDarkCommand(ArrayList<UnitBaes> command, int quantity){
+        for (int i=0;i<quantity;i++) {
+            switch (new Random().nextInt(1,5)) {
+                case 1 -> command.add(new Farmer(newName()));
+                case 2 -> command.add(new Sniper(newName()));
+                case 3 -> command.add(new Spearman(newName()));
+                case 4 -> command.add(new Monk(newName()));
+            }
+            }
+        }
+
+    /**
+     * Наполняет команду светлыми юнитами
+     * command:  лист куда можно положить юнитов
+     * quantity: колличество юнитов
+     */
+
+    static void fillLightCommand(ArrayList<UnitBaes> command, int quantity){
+        for (int i=0;i<quantity;i++) {
+            switch (new Random().nextInt(1,5)) {
+                case 1 -> command.add(new Farmer(newName()));
+                case 2 -> command.add(new Arbalester(newName()));
+                case 3 -> command.add(new Thief(newName()));
+                case 4 -> command.add(new Witch(newName()));
+            }}}}

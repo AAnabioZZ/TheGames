@@ -12,6 +12,6 @@ public class Spearman extends Infantry {
  void swipe(){};
     @Override
     public String getInfo(){
-        return "Не бросай Копье где попало, а то сгниет!";
+        return "Копейщик, " +super.name+":Не бросай Копье где попало, а то сгниет!";
     }
 }

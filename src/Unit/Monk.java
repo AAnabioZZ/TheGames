@@ -14,7 +14,7 @@ public class Monk extends Magican implements GameInterface{
     void wrathOfGod(){};
     @Override
     public String getInfo(){
-        return "Я служитель господа, с нами Бог!";
+        return "Монах, " +super.name+":Я служитель господа, с нами Бог!";
     }
 }
 

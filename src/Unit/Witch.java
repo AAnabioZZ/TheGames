@@ -13,7 +13,7 @@ public class Witch extends Magican implements GameInterface{
     void buff(){}
     @Override
     public String getInfo(){
-        return "Я колдун, сила переполняет меня!";
+        return "Колдун, " +super.name+":Сила переполняет меня!";
     }
 
 }

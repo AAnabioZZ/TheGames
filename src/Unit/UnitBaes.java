@@ -5,7 +5,9 @@ public class UnitBaes implements GameInterface {
     protected Integer hp;
     protected Integer armor;
     protected Integer speed;
-
+    /*
+    /что нибудь тут напишем
+    */
     public UnitBaes(String name, Integer hp, Integer armor, Integer speed) {
         this.name = name;
         this.hp = hp;

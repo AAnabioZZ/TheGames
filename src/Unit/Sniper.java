@@ -10,6 +10,6 @@ public class Sniper extends Shooters implements GameInterface{
     void hedShot(){};
     @Override
     public String getInfo(){
-        return "Я снайпер, один выстрел - один труп!";
+        return "Cнайпер, " +super.name+": один выстрел - один труп!";
     }
 }

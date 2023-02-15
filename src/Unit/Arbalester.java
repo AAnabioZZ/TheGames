@@ -12,6 +12,6 @@ public class Arbalester extends Shooters implements GameInterface{
 
     @Override
     public String getInfo(){
-        return "Арбалетчик готов!";
+        return "Арбалетчик, " +super.name+":Болты в пазу!";
     }
 }

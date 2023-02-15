@@ -11,6 +11,6 @@ public class Thief extends Infantry implements GameInterface{
     void steal(){};
     @Override
     public String getInfo(){
-        return "Я вор, меня не увидят!";
+        return "Вор, " +super.name+":Меня не увидят!";
     }
 }

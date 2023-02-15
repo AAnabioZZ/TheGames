@@ -14,7 +14,7 @@ public class Farmer extends UnitBaes implements GameInterface {
    }
    @Override
    public String getInfo(){
-      return "Фермер "+super.name+" Готов вкалывать!";
+      return "Фермер "+super.name+": Готов вкалывать!";
    }
    void takeFood(){};
    void takeUpArms(){};
