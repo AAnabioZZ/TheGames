@@ -1,19 +1,37 @@
 package Unit;
 
-public class UnitBaes implements GameInterface {
+public class UnitBaes implements GameInterface , Cloneable{
+    protected Integer atak;
+    protected Integer defens;
     protected String name;
     protected Integer hp;
-    protected Integer armor;
+
     protected Integer speed;
+    protected Integer damagMax;
+    protected Integer damagMin;
+    public Integer x;
+    public Integer y;
+
+    public int compareTo(UnitBaes unit){
+        return this.speed;
+    }
+    public UnitBaes(Integer atak, Integer defens, String name, Integer hp,
+                     Integer speed, Integer damagMax, Integer damagMin) {
+        this.atak = atak;
+        this.defens = defens;
+        this.name = name;
+        this.hp = hp;
+
+        this.speed = speed;
+        this.damagMax = damagMax;
+        this.damagMin = damagMin;
+
+    }
     /*
     /что нибудь тут напишем
     */
-    public UnitBaes(String name, Integer hp, Integer armor, Integer speed) {
-        this.name = name;
-        this.hp = hp;
-        this.armor = armor;
-        this.speed = speed;
-    }
+
+
     @Override
     public void step(){    };
 
@@ -45,13 +63,7 @@ public class UnitBaes implements GameInterface {
         this.hp = hp;
     }
 
-    public Integer getArmor() {
-        return armor;
-    }
 
-    public void setArmor(Integer armor) {
-        this.armor = armor;
-    }
 
     public Integer getSpeed() {
         return speed;
@@ -60,6 +72,8 @@ public class UnitBaes implements GameInterface {
     public void setSpeed(Integer speed) {
         this.speed = speed;
     }
+
+
 
 
 }

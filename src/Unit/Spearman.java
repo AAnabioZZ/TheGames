@@ -3,15 +3,21 @@ package Unit;
 public class Spearman extends Infantry {
     boolean haveWeapons;
 
-    public Spearman(String name, Integer hp, Integer armor, Integer speed, int stamina) {
-        super(name, hp, armor, speed, stamina);
-    }
+
+
     public Spearman(String name){
-        this(name,100,45,4,20);
+        this(4,5,name,10,4,3,1,20,true);
     }
- void swipe(){};
+
+    public Spearman(Integer atak, Integer defens, String name, Integer hp, Integer speed, Integer damagMax, Integer damagMin, int stamina, boolean haveWeapons) {
+        super(atak, defens, name, hp, speed, damagMax, damagMin, stamina);
+        this.haveWeapons = haveWeapons;
+    }
+
+
+    void swipe(){};
     @Override
     public String getInfo(){
-        return "Копейщик, " +super.name+":Не бросай Копье где попало, а то сгниет!";
+        return "iniciativa:"+super.speed+" Копейщик, " +super.name+":Не бросай Копье где попало, а то сгниет!";
     }
 }

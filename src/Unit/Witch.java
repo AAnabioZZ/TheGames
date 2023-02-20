@@ -1,19 +1,22 @@
 package Unit;
 
 public class Witch extends Magican implements GameInterface{
-    public Witch(String name, Integer hp, Integer armor, Integer speed, int mana) {
-        super(name, hp, armor, speed, mana);
-    }
+
     public Witch(String name){
-        this(name,100,10,7,120);
+        this(17,12,name,30,9,-5,-5,1);
     }
+
+    public Witch(Integer atak, Integer defens, String name, Integer hp, Integer speed, Integer damagMax, Integer damagMin, int mana) {
+        super(atak, defens, name, hp, speed, damagMax, damagMin, mana);
+    }
+
     void curse() {
 
     }
     void buff(){}
     @Override
     public String getInfo(){
-        return "Колдун, " +super.name+":Сила переполняет меня!";
+        return "iniciativa:"+super.speed+" Колдун, " +super.name+":Сила переполняет меня!";
     }
 
 }

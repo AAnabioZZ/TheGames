@@ -5,11 +5,15 @@ public class Shooters extends UnitBaes {
     int focus;
     int ammo;
 
-    public Shooters(String name, Integer hp, Integer armor, Integer speed, int focus , int ammo) {
-        super(name, hp, armor, speed);
+    public Shooters(Integer atak, Integer defens,
+                    String name, Integer hp,
+                    Integer speed, Integer damagMax, Integer damagMin,
+                    int focus, int ammo) {
+        super(atak, defens, name, hp, speed, damagMax, damagMin);
         this.focus = focus;
         this.ammo = ammo;
     }
+
 
     void aim(){}; // целится
     void needFort(){}; // звать строить укрепление
