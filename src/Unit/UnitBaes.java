@@ -5,23 +5,21 @@ public class UnitBaes implements GameInterface , Cloneable{
     protected Integer defens;
     protected String name;
     protected Integer hp;
-
+    protected String say = "Юнит готов!";
     protected Integer speed;
     protected Integer damagMax;
     protected Integer damagMin;
-    public Integer x;
-    public Integer y;
-
+    protected Pole2D pole2D;
     public int compareTo(UnitBaes unit){
         return this.speed;
     }
     public UnitBaes(Integer atak, Integer defens, String name, Integer hp,
-                     Integer speed, Integer damagMax, Integer damagMin) {
+                     Integer speed, Integer damagMax, Integer damagMin,int x,int y) {
         this.atak = atak;
         this.defens = defens;
         this.name = name;
         this.hp = hp;
-
+        this.pole2D = new Pole2D(x,y);
         this.speed = speed;
         this.damagMax = damagMax;
         this.damagMin = damagMin;
@@ -44,7 +42,7 @@ public class UnitBaes implements GameInterface , Cloneable{
     void needHelp(){};
     @Override
     public String getInfo(){
-        return "Юнит готов!";
+        return say ;
     }
 
     public String getName() {

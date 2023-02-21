@@ -5,12 +5,12 @@ public class Spearman extends Infantry {
 
 
 
-    public Spearman(String name){
-        this(4,5,name,10,4,3,1,20,true);
+    public Spearman(String name,int x,int y){
+        this(4,5,name,10,4,3,1,20,true,x,y);
     }
 
-    public Spearman(Integer atak, Integer defens, String name, Integer hp, Integer speed, Integer damagMax, Integer damagMin, int stamina, boolean haveWeapons) {
-        super(atak, defens, name, hp, speed, damagMax, damagMin, stamina);
+    public Spearman(Integer atak, Integer defens, String name, Integer hp, Integer speed, Integer damagMax, Integer damagMin, int stamina, boolean haveWeapons,int x,int y) {
+        super(atak, defens, name, hp, speed, damagMax, damagMin, stamina,x,y);
         this.haveWeapons = haveWeapons;
     }
 
