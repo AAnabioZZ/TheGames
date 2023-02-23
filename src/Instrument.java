@@ -13,10 +13,10 @@ public class Instrument {
     static void fillDarkCommand(ArrayList<UnitBaes> command, int quantity){
         for (int i=0;i<quantity;i++) {
             switch (new Random().nextInt(1,5)) {
-                case 1 -> command.add(new Farmer(newName(),1,i+1));
+                case 1 -> command.add(new Farmer(newName(),1,i+1,0));
                 case 2 -> command.add(new Sniper(newName(),1,i+1));
-                case 3 -> command.add(new Spearman(newName(),1,i+1));
-                case 4 -> command.add(new Monk(newName(),1,i+1));
+                case 3 -> command.add(new Thief(newName(),1,i+1));
+                case 4 -> command.add(new Witch(newName(),1,i+1));
             }
             }
         }
@@ -28,10 +28,11 @@ public class Instrument {
      */
 
     static void fillLightCommand(ArrayList<UnitBaes> command, int quantity){
+        int x = quantity;
         for (int i=0;i<quantity;i++) {
             switch (new Random().nextInt(1,5)) {
-                case 1 -> command.add(new Farmer(newName(),10,i+1));
-                case 2 -> command.add(new Arbalester(newName(),10,i+1));
-                case 3 -> command.add(new Thief(newName(),10,i+1));
-                case 4 -> command.add(new Witch(newName(),10,i+1));
+                case 1 -> command.add(new Farmer(newName(),x,i+1,1));
+                case 2 -> command.add(new Arbalester(newName(),x,i+1));
+                case 3 -> command.add(new Spearman(newName(),x,i+1));
+                case 4 -> command.add(new Monk(newName(),x,i+1));
             }}}}

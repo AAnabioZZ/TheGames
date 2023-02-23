@@ -1,5 +1,7 @@
 package Unit;
 
+import java.util.ArrayList;
+
 public class Spearman extends Infantry {
     boolean haveWeapons;
 
@@ -12,12 +14,15 @@ public class Spearman extends Infantry {
     public Spearman(Integer atak, Integer defens, String name, Integer hp, Integer speed, Integer damagMax, Integer damagMin, int stamina, boolean haveWeapons,int x,int y) {
         super(atak, defens, name, hp, speed, damagMax, damagMin, stamina,x,y);
         this.haveWeapons = haveWeapons;
+        this.say = "Не бросай Копье где попало, а то сгниет!";
+        this.who = "Копейщик  ";
+        this.collor = "\u001B[33m";
     }
 
-
+    public void step(ArrayList<UnitBaes> aliens) {}
     void swipe(){};
     @Override
     public String getInfo(){
-        return "iniciativa:"+super.speed+" Копейщик, " +super.name+":Не бросай Копье где попало, а то сгниет!";
+        return super.getInfo()+"в меня целились с расстояния:"+super.distance;
     }
 }

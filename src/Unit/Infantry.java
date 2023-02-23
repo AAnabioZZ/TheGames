@@ -1,6 +1,6 @@
 package Unit;
 
-public class Infantry extends UnitBaes {
+public abstract class Infantry extends UnitBaes {
 
 
     int stamina;

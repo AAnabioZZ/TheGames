@@ -1,6 +1,6 @@
 package Unit;
 
-public class Magican extends UnitBaes{
+public abstract class Magican extends UnitBaes{
     int mana;
 
     public Magican(Integer atak, Integer defens, String name, Integer hp, Integer speed, Integer damagMax, Integer damagMin, int mana,int x,int y) {
@@ -10,4 +10,6 @@ public class Magican extends UnitBaes{
 
 
     void needMana(){};
+
+
 }
