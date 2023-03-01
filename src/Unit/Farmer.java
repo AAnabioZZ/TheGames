@@ -3,16 +3,16 @@ package Unit;
 import java.util.ArrayList;
 
 public class Farmer extends UnitBaes implements GameInterface {
-
    int scared;
    int pocket;
    boolean ready;
 
    public Farmer(String name,int x, int y,int frakci){
+
       this(1,1,name,1,3,1,1,0,1,true,x,y,frakci);
    }
-
    public Farmer(Integer atak, Integer defens, String name, Integer hp, Integer speed, Integer damagMax, Integer damagMin, int scared, int pocket, boolean ready,int x,int y,int frakci) {
+
       super(atak, defens, name, hp, speed, damagMax, damagMin,x,y);
       this.scared = scared;
       this.pocket = pocket;
@@ -21,26 +21,16 @@ public class Farmer extends UnitBaes implements GameInterface {
       this.who = "Фермер    ";
       if(frakci>0)this.collor = "\u001B[33m";
       else this.collor = "\u001B[35m";
+      super.maxHp=hp;
+      this.emodji="⚒";
    }
-
-
-   public void step(ArrayList<UnitBaes> frends) {
-
+   @Override
+   public void step(ArrayList<UnitBaes> list1,ArrayList<UnitBaes> list2) {
+      if (super.frandy == null){huIsHu(list1,list2);}
+      if(super.status != "Die"){super.status="Redy";}
    }
    @Override
    public String getInfo(){
-      return super.getInfo();}
-   void takeFood(){};
-   void takeUpArms(){};
-   void takeArrows(){};
-   void takeTool(){};
-
-   void giveFood(){};
-   void giveUpArms(){};
-   void giveArrows(){};
-   void buildFort(){};
-   void retreat(){};
-
-
+      return super.getInfo()+howStep;}
 
 }

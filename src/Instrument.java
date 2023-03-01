@@ -36,3 +36,5 @@ public class Instrument {
                 case 3 -> command.add(new Spearman(newName(),x,i+1));
                 case 4 -> command.add(new Monk(newName(),x,i+1));
             }}}}
+
+

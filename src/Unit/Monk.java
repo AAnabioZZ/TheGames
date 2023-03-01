@@ -13,15 +13,12 @@ public class Monk extends Magican implements GameInterface{
         this.say = "Я служитель господа, с нами Бог!";
         this.who = "Монах     ";
         this.collor = "\u001B[33m";
+        super.maxHp=hp;
+        this.emodji="\uD83E\uDDD9";
     }
-
-    void orison(){};
-    public void step(ArrayList<UnitBaes> aliens) {}
-
-    void wrathOfGod(){};
     @Override
     public String getInfo(){
-        return super.getInfo()+"\u001B[36mМана: " + this.mana+"\u001B[0m";
+        return super.getInfo()+"\u001B[36mМана: " + this.mana+"\u001B[0m"+howStep;
     }
 }
 

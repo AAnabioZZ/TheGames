@@ -3,12 +3,9 @@ package Unit;
 import java.util.ArrayList;
 
 public class Sniper extends Shooters implements GameInterface{
-
-
-    void hedShot(){};
     @Override
     public String getInfo(){
-        return super.getInfo()+"\u001B[36m,Стрелы: " + this.ammo+"\u001B[0m";
+        return super.getInfo()+"\u001B[36m,Стрелы: " + this.ammo+"\u001B[0m"+howStep;
     }
 
     public Sniper(String name,int x,int y){
@@ -20,17 +17,10 @@ public class Sniper extends Shooters implements GameInterface{
         this.say = "Один выстрел - один труп!";
         this.who = "Снайпер   ";
         this.collor = "\u001B[35m";
+        super.maxHp=hp;
     }
-
-
-    public void step(ArrayList<UnitBaes> aliens) {
-
-        if (super.ammo > 0 && super.hp > 0){
-            this.attack(findTarget(super.getX(),super.getY(),aliens));
-            super.ammo--;
-        };
-    }
+        }
 
 
 
-}
+
