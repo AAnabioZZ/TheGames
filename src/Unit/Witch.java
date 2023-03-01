@@ -10,7 +10,7 @@ public class Witch extends Magican implements GameInterface{
         this.who = "Колдун    ";
         this.collor = "\u001B[35m";
         super.maxHp=hp;
-        this.emodji="\uD83E\uDDD9\u200D♂️";
+        this.emodji="\uD83E\uDDD9";
     }
     public void step(ArrayList<UnitBaes> list1,ArrayList<UnitBaes> list2) {
         super.step(list1,list2);

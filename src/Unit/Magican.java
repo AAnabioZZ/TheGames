@@ -33,7 +33,7 @@ public abstract class Magican extends UnitBaes{
         }
         int targetIndex = findMinIndex(lensTarget);
         frandy.get(targetIndex).distance = lensTarget[targetIndex];
-        this.howStep += frandy.get(targetIndex).emodji + frandy.get(targetIndex).pole2D.getPosmini();
+        this.howStep = frandy.get(targetIndex).emodji + frandy.get(targetIndex).pole2D.getPosmini();
         return frandy.get(targetIndex);
     }
 

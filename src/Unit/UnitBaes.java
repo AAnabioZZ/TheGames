@@ -4,6 +4,8 @@ package Unit;
 import java.util.ArrayList;
 
 public abstract class UnitBaes implements GameInterface, Cloneable {
+
+
     String emodji;
     ArrayList<UnitBaes> frandy;
     ArrayList<UnitBaes> aliens;
@@ -126,5 +128,12 @@ public abstract class UnitBaes implements GameInterface, Cloneable {
     public void step(ArrayList<UnitBaes> comandB, ArrayList<UnitBaes> comandA) {
 
     }
+    public String getEmodji() {
+        return emodji;
+    }
 
+    @Override
+    public String toString() {
+        return this.getEmodji()+": "+"\u001B[31m"+getHp()+" \u001B[34m: "+this.pole2D.getPosmini()+" "+this.howStep+"\u001B[00m";
+    }
 }

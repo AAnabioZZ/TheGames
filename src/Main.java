@@ -1,15 +1,17 @@
 import Unit.*;
 
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 public class Main {
+   public static ArrayList<UnitBaes> comandA = new ArrayList<>();
+    public static ArrayList<UnitBaes> comandB = new ArrayList<UnitBaes>();
+    public static ArrayList<UnitBaes> initiative = new ArrayList<>();
     public static void main(String[] args) {
 
-        ArrayList<UnitBaes> comandA = new ArrayList<>();
-        ArrayList<UnitBaes> comandB = new ArrayList<UnitBaes>();
-        ArrayList<UnitBaes> initiative = new ArrayList<>();
+
 
         Instrument.fillDarkCommand(comandA, 10);
         Instrument.fillLightCommand(comandB, 10);
@@ -30,46 +32,48 @@ public class Main {
                 return o1.getSpeed() - o2.getSpeed();
             }
         });
-
-        for (UnitBaes unit : comandA) {
-            System.out.println(unit.getInfo());
-        }
-        System.out.println("____________________________________________");
-        for (UnitBaes unit : comandB) {
-            System.out.println(unit.getInfo());
-        }
-
-        System.out.println("____________________________________________");
         Collections.reverse(initiative);
-        for (UnitBaes unit : initiative) {
-            System.out.println(unit.getInfo());
-        }
+        View.view();
+//        for (UnitBaes unit : initiative) {
+//            System.out.println(unit.getInfo());
+//        }
 
+//
+//        for (UnitBaes unit : comandA) {
+//            System.out.println(unit.getInfo());
+//        }
+//        System.out.println("____________________________________________");
+//        for (UnitBaes unit : comandB) {
+//            System.out.println(unit.getInfo());
+//        }
+//
+//        System.out.println("____________________________________________");
+//
+//
         while (true) {
             Scanner sc = new Scanner(System.in);
-            System.out.print("Enter для продолжения или n + Enter для выхода");
+            System.out.print("для продолжения Enter");
             String res = sc.nextLine();
-            if (res == "n") {
-                break;
-            } else {
+            View.view();
+
                 for (UnitBaes item : initiative)
                 {item.step(comandA,comandB);}
-                    System.out.println("Команда 1______________________________________");
-                    for (UnitBaes unit : comandA) {
-                        System.out.println(unit.getInfo());
-                    }
-                    System.out.println("Команда 2______________________________________");
-                    for (UnitBaes unit : comandB) {
-                        System.out.println(unit.getInfo());
-                    }
-                    System.out.println("Очередь инициативы_____________________________");
-
-                    for (UnitBaes unit : initiative) {
-                        System.out.println(unit.getInfo());
-                    }
-                }
+//                    System.out.println("Команда 1______________________________________");
+//                    for (UnitBaes unit : comandA) {
+//                        System.out.println(unit.getInfo());
+//                    }
+//                    System.out.println("Команда 2______________________________________");
+//                    for (UnitBaes unit : comandB) {
+//                        System.out.println(unit.getInfo());
+//                    }
+//                    System.out.println("Очередь инициативы_____________________________");
+//
+//                    for (UnitBaes unit : initiative) {
+//                        System.out.println(unit.getInfo());
+//                    }
+//                }
             }
-      }
+  }
 
     }
 
