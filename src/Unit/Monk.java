@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Monk extends Magican implements GameInterface{
 
     public Monk(String name,int x,int y){
-        this(12,7,name,30,5,-4,-4,1,x, y);
+        this(12,7,name,30,5,-5,-5,1,x, y);
     }
 
     public Monk(Integer atak, Integer defens, String name, Integer hp, Integer speed, Integer damagMax, Integer damagMin, int mana,int x,int y) {

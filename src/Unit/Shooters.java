@@ -58,17 +58,17 @@ public abstract class Shooters extends UnitBaes {
             findFarmer();
             return;
         }
-        super.howStep = "Мертвые не ходят";
+        super.howStep="\uD83D\uDC80";
     }
     private void findFarmer(){
         for (UnitBaes unit : super.frandy) {
             if(unit.getWho()=="Фермер    "&& unit.getStatus()=="Redy"){
                 unit.status = "Gives ammo";
                 this.ammo++;
-                super.howStep += "    \uD83D\uDC49⚒"+unit.pole2D.getPosmini();
+                super.howStep += "  \uD83D\uDC49⚒"+unit.pole2D.getPosmini();
                 return;
         }
             }
-    super.howStep += "    \uD83D\uDC49⚒❌";
+    super.howStep += "  \uD83D\uDC49⚒❌";
 }
 }

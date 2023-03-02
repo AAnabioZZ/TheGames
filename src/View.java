@@ -1,4 +1,3 @@
-
 import Unit.UnitBaes;
 
 import java.util.Collections;
@@ -30,11 +29,11 @@ public class View {
         for (UnitBaes human: Main.initiative) {
             if (human.getX() == x && human.getY() == y){
                 if (human.getHp() == 0) {
-                    out = "|" + (AnsiColors.ANSI_RED_BACKGROUND + human.getEmodji() + AnsiColors.ANSI_RESET);
+                    out = "|" + (AnsiColors.ANSI_RED_BACKGROUND + toBeOrNotToBe(human) + AnsiColors.ANSI_RESET);
                     break;
                 }
-                if (Main.comandA.contains(human)) out = "|" + (AnsiColors.ANSI_BLUE_BACKGROUND + human.getEmodji() + AnsiColors.ANSI_RESET);
-                if (Main.comandB.contains(human)) out = "|" + (AnsiColors.ANSI_GREEN_BACKGROUND + human.getEmodji() + AnsiColors.ANSI_RESET);
+                if (Main.comandA.contains(human)) out = "|" + (AnsiColors.ANSI_BLUE_BACKGROUND + human.getEmodjiDie() + AnsiColors.ANSI_RESET);
+                if (Main.comandB.contains(human)) out = "|" + (AnsiColors.ANSI_GREEN_BACKGROUND + human.getEmodjiDie() + AnsiColors.ANSI_RESET);
                 break;
             }
         }
@@ -63,7 +62,7 @@ public class View {
         System.out.println(Main.comandB.get(0));
         System.out.println(midl10);
 
-        for (int i = 2; i < 9; i++) {
+        for (int i = 2; i < 10; i++) {
             for (int j = 1; j < 11; j++) {
                 System.out.print(getChar(i, j));
             }
@@ -81,5 +80,9 @@ public class View {
         tabSetter(Main.comandA.get(9).toString().length(), l[0]);
         System.out.println(Main.comandA.get(9));
         System.out.println(bottom10);
+    }
+    private static String toBeOrNotToBe(UnitBaes unit){
+        if(unit.getStatus()=="Die"){return "\uD83D\uDC7B";}
+        return unit.getEmodji();
     }
 }

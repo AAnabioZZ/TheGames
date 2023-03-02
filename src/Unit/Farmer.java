@@ -27,7 +27,9 @@ public class Farmer extends UnitBaes implements GameInterface {
    @Override
    public void step(ArrayList<UnitBaes> list1,ArrayList<UnitBaes> list2) {
       if (super.frandy == null){huIsHu(list1,list2);}
-      if(super.status != "Die"){super.status="Redy";}
+      if(super.status != "Die"){super.status="Redy";return;}
+      super.howStep="\uD83D\uDC80";
+
    }
    @Override
    public String getInfo(){

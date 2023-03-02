@@ -16,9 +16,28 @@ public class Main {
         Instrument.fillDarkCommand(comandA, 10);
         Instrument.fillLightCommand(comandB, 10);
 
-//        comandA.add(new Sniper("макс",1,1));
-//        comandB.add(new Spearman("Петр",10,1));
-//        comandB.add(new Monk("Петр",10,2));
+
+//        comandA.add(new Farmer("макс",1,1,0));
+//        comandA.add(new Farmer("макс",1,2,0));
+//        comandA.add(new Farmer("макс",1,3,0));
+//        comandA.add(new Farmer("макс",1,4,0));
+//        comandA.add(new Farmer("макс",1,5,0));
+//        comandA.add(new Sniper("макс",1,6));
+//        comandA.add(new Farmer("макс",1,7,0));
+//        comandA.add(new Farmer("макс",1,8,0));
+//        comandA.add(new Farmer("макс",7,6,0));
+//        comandA.add(new Farmer("макс",1,10,0));
+//
+//        comandB.add(new Farmer("макс",10,1,1));
+//        comandB.add(new Farmer("макс",10,2,1));
+//        comandB.add(new Farmer("макс",10,3,1));
+//        comandB.add(new Farmer("макс",10,4,1));
+//        comandB.add(new Monk("Петр",10,5));
+//        comandB.add(new Spearman("Петр",10,6));
+//        comandB.add(new Monk("Петр",10,7));
+//        comandB.add(new Farmer("макс",10,8,1));
+//        comandB.add(new Farmer("макс",10,9,1));
+//        comandB.add(new Farmer("макс",10,10,1));
 
         initiative.addAll(comandA);
         initiative.addAll(comandB);

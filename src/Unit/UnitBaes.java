@@ -11,7 +11,7 @@ public abstract class UnitBaes implements GameInterface, Cloneable {
     ArrayList<UnitBaes> aliens;
     public double distance;
     protected Integer atak;
-    protected String howStep;
+    protected String howStep = "";
     protected String status = "Redy";
     protected Integer defens;
     protected String name;
@@ -50,9 +50,9 @@ public abstract class UnitBaes implements GameInterface, Cloneable {
                 "\u001B[31mHP: %d " +
                 "\u001B[0mговорит:%s", this.collor, this.who, this.speed, this.pole2D.x, this.pole2D.y, this.hp, this.say);
     }
-    public String getDamag(int attak) {
-        int i = attak - this.defens;
-        this.hp -= i;
+    public String getDamag(int damag) {
+
+        this.hp -= damag;
         if (this.hp > this.maxHp) {
             this.hp = this.maxHp;
         }
@@ -61,20 +61,20 @@ public abstract class UnitBaes implements GameInterface, Cloneable {
             this.status = "Die";
             this.speed = 0;
         }
-        return Integer.toString(i);
+        return Integer.toString(damag);
     }
     protected UnitBaes findTarget() {
         double[] lensTarget = new double[this.aliens.size()];
         for (int i = 0; i < aliens.size(); i++) {
             if (aliens.get(i).getStatus() != "Die") {
-                lensTarget[i] = Math.sqrt((aliens.get(i).getY() - this.getY()) * (aliens.get(i).getY() - this.getY()) + (frandy.get(i).getX() - this.getX()) * (frandy.get(i).getX() - this.getX()));
+                lensTarget[i] = Math.sqrt((aliens.get(i).getY() - this.getY()) * (aliens.get(i).getY() - this.getY()) + (aliens.get(i).getX() - this.getX()) * (aliens.get(i).getX() - this.getX()));
             } else {
                 lensTarget[i] = aliens.size() + 100;
             }
         }
         int targetIndex = findMinIndex(lensTarget);
         aliens.get(targetIndex).distance = lensTarget[targetIndex];
-        this.howStep += aliens.get(targetIndex).emodji + aliens.get(targetIndex).pole2D.getPosmini();
+        this.howStep = aliens.get(targetIndex).emodji + aliens.get(targetIndex).pole2D.getPosmini();
         return aliens.get(targetIndex);
     }
     protected int findMinIndex(double[] array) {
@@ -130,6 +130,12 @@ public abstract class UnitBaes implements GameInterface, Cloneable {
     }
     public String getEmodji() {
         return emodji;
+    }
+    public String getEmodjiDie() {
+        if(this.getStatus()=="Die"){return "\uD83D\uDC7B";}
+        return this.getEmodji();
+
+
     }
 
     @Override

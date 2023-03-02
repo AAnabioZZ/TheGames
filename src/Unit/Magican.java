@@ -11,14 +11,15 @@ public abstract class Magican extends UnitBaes{
     }
     public void step(ArrayList<UnitBaes> list1,ArrayList<UnitBaes> list2) {
         if (super.frandy == null){huIsHu(list1,list2);}
-
+if(super.status != "Die"){
         if (this.mana > 0 && super.hp > 0) {
-            this.attack(this.findTarget());
-
-        }}
+            this.attack(this.findTarget());}
+        if(this.mana==0&& super.hp > 0){
+            super.howStep+="🙏💧";
+        }}else{super.howStep="\uD83D\uDC80";}}
     private void attack(UnitBaes target){
         if (target.getHp() > 0 & target.getHp() < target.getMaxHp()){
-            target.getDamag(super.atak);
+            super.howStep+= target.emodji+"🙌\u001B[32m" +target.getDamag(super.damagMax)+"\u001B[0m";
         }
     }
     @Override
@@ -26,9 +27,9 @@ public abstract class Magican extends UnitBaes{
         double[] lensTarget = new double[this.frandy.size()];
         for (int i = 0; i < frandy.size(); i++) {
             if (frandy.get(i).getStatus() != "Die") {
-                lensTarget[i] = frandy.get(i).getMaxHp()-frandy.get(i).getHp() * -1;
+                lensTarget[i] = (double)frandy.get(i).getHp() / ((double)frandy.get(i).getMaxHp() / 100);
             } else {
-                lensTarget[i] = frandy.size() + 100;
+                lensTarget[i] = frandy.size() + 1000;
             }
         }
         int targetIndex = findMinIndex(lensTarget);

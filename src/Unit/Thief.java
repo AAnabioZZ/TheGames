@@ -19,6 +19,5 @@ boolean hidde = true;
     public String getInfo(){
         return super.getInfo()+howStep;
     }
-    public void step(ArrayList<UnitBaes> list1,ArrayList<UnitBaes> list2) {
-    }
+
 }
