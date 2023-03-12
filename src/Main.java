@@ -42,17 +42,8 @@ public class Main {
         initiative.addAll(comandA);
         initiative.addAll(comandB);
 
-        initiative.sort(new Comparator<UnitBaes>() {
-            @Override
-            public int compare(UnitBaes o1, UnitBaes o2) {
-                if (o1.getSpeed() == o2.getSpeed()) {
-                    return o1.getHp() - o2.getHp();
-                }
-                return o1.getSpeed() - o2.getSpeed();
-            }
-        });
-        Collections.reverse(initiative);
-        View.view();
+
+//        View.view();
 //        for (UnitBaes unit : initiative) {
 //            System.out.println(unit.getInfo());
 //        }
@@ -70,10 +61,36 @@ public class Main {
 //
 //
         while (true) {
+            boolean viner = true;
+            for (UnitBaes item : comandA)
+            {if(item.getStatus() != "Die") viner = false;}
+            if (viner){
+                System.out.println("Победила комадна а");
+                break;
+            }viner = true;
+            for (UnitBaes item : comandB)
+            {if(item.getStatus() != "Die") viner = false;}
+            if (viner){
+                System.out.println("Победила комадна b" +
+                        "" +
+                        "");
+                break;
+            }
+            initiative.sort(new Comparator<UnitBaes>() {
+                @Override
+                public int compare(UnitBaes o1, UnitBaes o2) {
+                    if (o1.getSpeed() == o2.getSpeed()) {
+                        return o1.getHp() - o2.getHp();
+                    }
+                    return o1.getSpeed() - o2.getSpeed();
+                }
+            });
+            Collections.reverse(initiative);
+            View.view();
             Scanner sc = new Scanner(System.in);
             System.out.print("для продолжения Enter");
             String res = sc.nextLine();
-            View.view();
+
 
                 for (UnitBaes item : initiative)
                 {item.step(comandA,comandB);}
